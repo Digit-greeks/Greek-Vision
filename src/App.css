@@ -1,0 +1,353 @@
+/* Styles existants de l'App */
+.App {
+  text-align: center;
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Animation de l'App-logo */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Styles spécifiques à l'outil Greeks --- */
+
+/* Conteneur global */
+/* Code GLOBAL (desktop) */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw; /* ou width: 100% si tu préfères */
+  overflow-x: hidden; /* pour éviter un éventuel scroll horizontal */
+}
+
+.display-panel .recharts-wrapper {
+  margin-left: 0; 
+  margin-right: 0; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+/* Panneau de contrôle */
+.control-panel {
+  width: 30%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* En-tête (logo et titre) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* Boutons d'options */
+.option-buttons {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Section pour le paramètre à faire varier */
+.param-section {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.section-title {
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.param-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 80%;
+  margin-left: 17%;
+}
+
+.param-row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.value-box {
+  width: 25%;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Section pour choisir le Greek */
+.greek-section {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.greek-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.secondary-greek {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.secondary-greek-choose {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Panneau d'affichage */
+.display-panel {
+  width: 70%;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.option-price {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.greek-value {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgba(66,133,244,0.8);
+}
+
+.greek-value.secondary {
+  color: #ff6600;
+}
+
+/* Conteneur du slider */
+.slider-container {
+  margin-top: 5px;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.slider-value {
+  margin-top: 8px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  width: 150px;
+  margin-left: calc(50% - 75px);
+}
+
+.slider-range {
+  margin-top: -4%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+}
+
+/* --- Media Queries pour mobile --- */
+@media (max-width: 768px) {
+
+  /* CONTAINER PRINCIPAL EN COLONNE (panneau gris en haut, graphique dessous) */
+  .container {
+    flex-direction: column !important;
+    padding: 0.5rem !important;
+    overflow-x: hidden !important;
+    height: auto !important;
+  }
+
+  /* Panneau gris plus compact en hauteur, reste en haut */
+  .control-panel {
+    width: 100% !important;
+    padding: 5px !important;
+    margin-bottom: 2px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* En-tête compacte sans espace inutile */
+  .header {
+    margin: 0 auto !important;
+    gap: 4px !important;
+  }
+
+  .header img {
+    width: 45px !important;
+  }
+
+  .header h1 {
+    font-size: 20px !important;
+    margin: 2px !important;
+  }
+
+  /* Boutons même largeur mais très resserrés verticalement */
+  .option-buttons,
+  .param-buttons,
+  .greek-buttons {
+    gap: 3px !important; /* espace réduit verticalement */
+    margin: 4px auto !important;
+    padding: 0 !important;
+  }
+
+  button {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    margin: 2px !important;
+    height: auto !important;
+  }
+
+  .section-title {
+    font-size: 13px !important;
+    margin: 5px auto !important;
+  }
+
+  .param-row {
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  .value-box {
+    width: 50px !important;
+    padding: 4px !important;
+    font-size: 12px !important;
+  }
+
+  /* DISPLAY PANEL (graphique parfaitement visible) */
+  .display-panel {
+    width: 100% !important;
+    padding: 5px !important;
+    box-sizing: border-box !important;
+  }
+
+  .display-panel .recharts-wrapper {
+    margin-left: -25px !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* SLIDER totalement visible en bas, sans aucun débordement */
+  .slider-container {
+    width: 100% !important;
+    padding: 5px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .slider-container input[type="range"] {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .slider-value {
+    width: 100px !important;
+    font-size: 12px !important;
+    margin: 4px auto !important;
+    padding: 2px !important;
+  }
+
+  .slider-range {
+    font-size: 11px !important;
+    padding: 0 5px !important;
+  }
+
+  /* Texte informatif compact */
+  .option-price, .greek-value {
+    font-size: 12px !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Empêcher définitivement tout débordement horizontal ou vertical */
+  html, body, .container {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    max-width: 100% !important;
+  }
+
+  * {
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-panel .recharts-wrapper {
+    margin-left: -10px !important;  /* réduit encore un peu le décalage vers la gauche */
+    margin-right: -10px !important; 
+    width: calc(100% + 10px) !important; /* force légèrement la largeur totale */
+    box-sizing: border-box !important;
+  }
+}
+
