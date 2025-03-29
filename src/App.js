@@ -11,11 +11,6 @@ import {
 } from "recharts";
 import "./App.css";
 
-const isMobile = window.innerWidth <= 768;
-
-
-
-
 const CustomTooltip = ({ active, label, payload, selectedGreek, secondaryGreek }) => {
   if (!active || !payload || payload.length === 0) return null;
   
