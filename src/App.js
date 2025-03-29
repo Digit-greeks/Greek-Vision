@@ -69,7 +69,7 @@ const App = () => {
   const [greekData, setGreekData] = useState({});
   const [xAxisValues2, setXAxisValues2] = useState([]);
   const [greekData2, setGreekData2] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [allData, setAllData] = useState(null);
   const [priceData, setPriceData] = useState(null);
 
